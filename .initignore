@@ -1,0 +1,7 @@
+.git$
+.gitignore
+install
+README.md
+init.sh
+.initignore
+etc

@@ -1,0 +1,9 @@
+#set custom prompt
+export PS1='========================= \u @\t =========================
+[\h:\w]
+$ '
+#set window title
+echo -n -e "\033]0;`hostname`\007"
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced

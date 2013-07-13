@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+proceed.sh "are you sure, this will erase local changes that have not been pushed"
+git fetch
+git reset --hard origin/HEAD
