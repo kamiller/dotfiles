@@ -54,4 +54,4 @@
 #   trustExitCode = false
 
 [core]
-	editor = /usr/bin/vim
+	editor = /usr/local/bin/vim
