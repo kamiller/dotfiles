@@ -6,7 +6,7 @@
 [alias]
 	st = status
 	co = checkout
-	ci = commit -a
+	ci = commit
 	br = branch
 	unstage = reset HEAD
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
