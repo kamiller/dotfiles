@@ -1,9 +1,50 @@
-#set custom prompt
+#!/bin/bash
+
+RED="\[\033[0;31m\]"
+CYAN="\[\033[1;36m\]"
+PURPLE="\[\033[1;35m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+NORMAL="\[\033[0m\]"
+BLUE="\[\033[0;34m\]"
+
 export PS1='========================= \u @\t =========================
 [\h:\w]
 $ '
+
 #set window title
-echo -n -e "\033]0;`hostname`\007"
+\echo -n -e "\033]0;`hostname`\007"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+
+original_prompt="${PS1}"
+modified_original_prompt=$(echo -n "${original_prompt}" | sed 's/\$ $//g')
+
+dirty_indicator() {
+  if [[ -n "$(git status 2> /dev/null | tail -n1)" ]]; then
+    if [[ $(git status 2> /dev/null | tail -n1) != *"nothing to commit"* ]]; then
+      echo -n "*"
+    fi
+  fi 
+}
+
+git_branch() {
+  branch=`git branch 2>/dev/null | grep '^\*\ ' | awk '{print $2}'`
+  echo -n "${branch}"
+}
+
+spacer_start() {
+  if [[ -n "$(git status 2> /dev/null | tail -n1)" ]]; then
+    echo -n "["
+  fi
+}
+
+spacer_end() {
+  if [[ -n "$(git status 2> /dev/null | tail -n1)" ]]; then
+    echo -n "]"
+  fi
+}
+
+export PS1="$modified_original_prompt$YELLOW\$(spacer_start)\$(git_branch)$RED\$(dirty_indicator)$YELLOW\$(spacer_end)$NORMAL$ "
+export PROMPT_COMMAND=""
