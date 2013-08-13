@@ -8,6 +8,7 @@
 	co = checkout
 	ci = commit
 	br = branch
+	tags = tag --list
 	unstage = reset HEAD
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   put = push origin HEAD
