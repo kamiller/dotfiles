@@ -10,3 +10,9 @@ rvm rubygems current
 gem install rails
 
 sudo apt-get install libmysqlclient-dev
+
+sudo mkdir /var/rails
+
+#mkdir /var/rails/app
+#mkdir shared/log
+#mkdir shared/pids
