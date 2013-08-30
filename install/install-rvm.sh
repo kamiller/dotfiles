@@ -8,3 +8,5 @@ rvm use 1.9.3 --default
 rvm rubygems current
 
 gem install rails
+
+sudo apt-get install libmysqlclient-dev
