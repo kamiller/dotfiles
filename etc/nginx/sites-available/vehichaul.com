@@ -12,7 +12,7 @@ server {
 
 	keepalive_timeout 5;
 	
-	root /var/local/www;
+       root /var/rails/vehichaul/current/public;
 
 
 	location / {
@@ -27,6 +27,14 @@ server {
 		break;
 	      }
     	}
+		
+        location ~ ^/assets/ {
+                expires 1y;
+                add_header Cache-Control public;
+
+                add_header ETag "";
+                break;
+        }
 
 	error_page 500 502 503 504 /500.html;
 	    location = /500.html {
