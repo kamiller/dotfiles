@@ -16,3 +16,4 @@ which vim
 brew install ack
 brew install wget
 brew install git
+brew install ssh-copy-id
