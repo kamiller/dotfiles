@@ -11,6 +11,7 @@ gem install rails
 gem install bundler
 
 sudo apt-get install libmysqlclient-dev
+sudo apt-get install nodejs
 
 sudo mkdir /var/rails
 
