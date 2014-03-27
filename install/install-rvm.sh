@@ -1,7 +1,14 @@
 #!/bin/bash
 
-#adduser ${appname}
-#addgroup ${appname} sudo
+ if [ -z "${1}" ]; then
+     echo "#### ERROR: no app name..."
+     exit 1
+ fi
+
+appname=$1
+
+adduser ${appname}
+addgroup ${appname} sudo
 
 # disable root login /etc/ssh/sshd_config
 
@@ -24,11 +31,9 @@ gem install bundler
 
 sudo apt-get -y install git-core libmysqlclient-dev nodejs nginx
 
-sudo mkdir /var/rails
+sudo mkdir -p /var/rails/${appname}/shared/log
+sudo mkdir -p /var/rails/${appname}/shared/pids
 
-#mkdir /var/rails/app
-#mkdir shared/log
-#mkdir shared/pids
-
+sudo chown -R ${appname}:${appname} /var/rails/${appname}
 
 # add jenkins authorized_key and private key
