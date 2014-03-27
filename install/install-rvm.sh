@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#adduser ${appname}
+#addgroup ${appname} sudo
+
+# disable root login /etc/ssh/sshd_config
+
 curl -L https://get.rvm.io | bash
 
 rvm requirements
