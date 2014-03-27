@@ -19,3 +19,6 @@ sudo mkdir /var/rails
 #mkdir /var/rails/app
 #mkdir shared/log
 #mkdir shared/pids
+
+
+# add jenkins authorized_key and private key
