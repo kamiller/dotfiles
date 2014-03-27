@@ -10,7 +10,9 @@ rvm rubygems current
 gem install rails
 gem install bundler
 
-sudo apt-get -y install libmysqlclient-dev nodejs nginx
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get -y install git-core libmysqlclient-dev nodejs nginx
 
 sudo mkdir /var/rails
 
