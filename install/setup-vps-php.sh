@@ -25,6 +25,7 @@ sudo apt-get -y install apache2 php5 libapache2-mod-php5 php5-mcrypt
 # add jenkins authorized_key and private key
 
 echo "disable root login /etc/ssh/sshd_config"
+sudo sed 's/^\(PasswordAuthentication \)yes/\1no/' -i /etc/ssh/sshd_config
 
 sudo cp -R .ssh /home/${appname}
 sudo chown -R ${appname}:${appname} /home/${appname}/.ssh
