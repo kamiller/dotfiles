@@ -37,3 +37,6 @@ sudo mkdir -p /var/rails/${appname}/shared/pids
 sudo chown -R ${appname}:${appname} /var/rails/${appname}
 
 # add jenkins authorized_key and private key
+sudo cp -R .ssh /home/${appname}
+sudo chown -R ${appname}:${appname} /home/${appname}/.ssh
+sudo chmod -R 700 /home/${appname}/.ssh
