@@ -24,3 +24,4 @@ sudo apt-get -y install git-core libmysqlclient-dev nodejs nginx
 echo "disable root login /etc/ssh/sshd_config"
 sudo sed 's/^\(PasswordAuthentication \)yes/\1no/' -i /etc/ssh/sshd_config
 sudo sed 's/^\(PermitRootLogin \)yes/\1no/' -i /etc/ssh/sshd_config
+sudo service ssh restart
