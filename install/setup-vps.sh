@@ -17,6 +17,11 @@ sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get upgrade -y
 
+sudo su - ${appname}
+cd ~
+
+echo "installing rvm"
+
 curl -sSL https://get.rvm.io | bash -s stable
 
 source ~/.rvm/scripts/rvm
