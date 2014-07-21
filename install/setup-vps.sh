@@ -40,3 +40,8 @@ sudo chown -R ${appname}:${appname} /var/rails/${appname}
 sudo cp -R .ssh /home/${appname}
 sudo chown -R ${appname}:${appname} /home/${appname}/.ssh
 sudo chmod -R 700 /home/${appname}/.ssh
+
+echo "disable root login /etc/ssh/sshd_config"
+sudo sed 's/^\(PasswordAuthentication \)yes/\1no/' -i /etc/ssh/sshd_config
+sudo sed 's/^\(PermitRootLogin \)yes/\1no/' -i /etc/ssh/sshd_config
+sudo service ssh restart
