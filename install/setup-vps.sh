@@ -17,22 +17,19 @@ sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get upgrade -y
 
-sudo su - ${appname}
-cd ~
-
 echo "installing rvm"
 
-curl -sSL https://get.rvm.io | bash -s stable
+sudo -u ${appname} bash -c "curl -sSL https://get.rvm.io | bash -s stable"
 
-source ~/.rvm/scripts/rvm
+#source ~/.rvm/scripts/rvm
 
-rvm requirements
-rvm install 1.9.3
-rvm use 1.9.3 --default
-rvm rubygems current
+sudo -u ${appname} bash -c "rvm requirements"
+sudo -u ${appname} bash -c "rvm install 1.9.3"
+sudo -u ${appname} bash -c "rvm use 1.9.3 --default"
+sudo -u ${appname} bash -c "rvm rubygems current"
 
-gem install rails
-gem install bundler
+sudo -u ${appname} bash -c "gem install rails"
+sudo -u ${appname} bash -c "gem install bundler"
 
 sudo apt-get -y install git-core libmysqlclient-dev nodejs nginx
 
