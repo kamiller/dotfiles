@@ -7,8 +7,8 @@
 
 appname=$1
 
-adduser ${appname}
-addgroup ${appname} sudo
+sudo adduser ${appname}
+sudo addgroup ${appname} sudo
 
 # disable root login /etc/ssh/sshd_config
 
