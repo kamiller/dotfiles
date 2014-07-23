@@ -21,6 +21,7 @@ sudo apt-get -y install git-core libmysqlclient-dev nodejs nginx
 
 sudo mkdir -p /var/rails/${appname}/shared/log
 sudo mkdir -p /var/rails/${appname}/shared/pids
+sudo mkdir -p /var/rails/${appname}/shared/system
 
 sudo chown -R ${appname}:${appname} /var/rails/${appname}
 
