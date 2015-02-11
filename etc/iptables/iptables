@@ -1,9 +1,0 @@
-#!/bin/sh
-
-#
-# Network startup script
-# 
-# /etc/network/if-pre-up.d/iptables
-#
-
-/sbin/iptables-restore < /etc/iptables.up.rules

@@ -1,5 +1,5 @@
 [user]
-	name = Kyle		# name
+	name = kyle
 	email =	github@kylemiller.com	# email
 [github]
 	user = kamiller	# github username
@@ -57,7 +57,8 @@
 #[core]
 	#editor = /usr/local/bin/vim
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
 [core]
 	editor = vim
