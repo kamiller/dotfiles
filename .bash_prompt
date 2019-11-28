@@ -19,7 +19,7 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 original_prompt="${PS1}"
-modified_original_prompt=$(echo -n "${original_prompt}" | sed 's/\$ $/
+modified_original_prompt=$(echo -n "${original_prompt}" | sed 's/\$ $/ \
 /g')
 
 dirty_indicator() {
