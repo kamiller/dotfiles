@@ -1,6 +1,6 @@
 [user]
 	name = kyle
-	email =	github@kylemiller.com	# email
+	email = github@kylemiller.com
 [github]
 	user = kamiller	# github username
 [alias]
@@ -11,7 +11,8 @@
 	tags = tag --list
 	unstage = reset HEAD
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  put = push origin HEAD
+	put = push origin HEAD
+	last = show --stat
 [color]
 	diff = auto
 	status = auto
@@ -61,4 +62,4 @@
 	smudge = git media smudge %f
 	required = true
 [core]
-	editor = vim
+	editor = mate
